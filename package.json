@@ -1,0 +1,51 @@
+{
+  "name": "unit-test-cmd-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prod": "node ./dist/app.js",
+    "start": "npm run build && npm run prod",
+    "testfile1": "nyc ts-mocha -p tsconfig.json unittest/*.test.ts --timeout 10000",
+    "testfile2": "nyc mocha -r ts-node/register test/**/*.test.ts test/**/*.test.js --timeout 10000",
+    "testfile": "nyc ts-mocha src/test/*.test.ts src/test/*.test.js --timeout 10000",
+    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm run testfile",
+    "test": "npm run coverage"
+  },
+  "keywords": [],
+  "author": "Biswsindhu Mandal",
+  "license": "ISC",
+  "dependencies": {
+    "chai-as-promised": "^7.1.1",
+    "ts-mocha": "^10.0.0",
+    "tsconfig-paths": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/lodash": "^4.14.182",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.0.3",
+    "@types/sinon": "^10.0.13",
+    "@types/sinon-chai": "^3.2.8",
+    "@types/winston": "^2.4.4",
+    "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
+    "esm": "^3.2.25",
+    "lodash": "^4.17.21",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "sinon": "^14.0.0",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4",
+    "winston": "^3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artbindu/mocha-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/artbindu/mocha-test/issues"
+  },
+  "homepage": "https://github.com/artbindu/mocha-test#readme"
+}
